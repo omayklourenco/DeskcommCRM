@@ -83,10 +83,15 @@ export function UsageDashboardClient({ agents, initial }: Props) {
   };
 
   const q = useAiUsage(filters);
+  // As opções de "Tipo de uso" vêm da mesma consulta SEM o filtro de tipo: o
+  // `by_kind` da consulta filtrada só tem o tipo escolhido, e a lista encolheria
+  // para ele. Sem filtro de tipo a chave é a mesma e o react-query não repete a ida.
+  const semTipo = useAiUsage({ ...filters, invocation_kind: undefined });
+  const kinds = Object.keys(semTipo.data?.by_kind ?? {});
 
   return (
     <div className="flex flex-col gap-6">
-      <UsageFilters agents={agents} initial={initial} />
+      <UsageFilters agents={agents} kinds={kinds} initial={initial} />
 
       {q.isLoading || !q.data ? (
         <>
