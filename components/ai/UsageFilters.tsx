@@ -44,7 +44,7 @@ export function UsageFilters({ agents, kinds, initial }: Props) {
   const [to, setTo] = useState<string>(initial.to ?? "");
 
   // A lista era fixa e quase toda de nomes que `llm_calls.purpose` não tem
-  // (`sentiment_check`, `embed_chunk`...): escolher devolvia zero. O escolhido entra
+  // (`sentiment_check`, `embed_chunk`...): escolher um desses devolvia zero. O escolhido entra
   // mesmo fora do período, senão o gatilho fica em branco e esconde o filtro ativo.
   const kindOptions = [...new Set(kind === "all" ? kinds : [...kinds, kind])]
     .map((value) => {

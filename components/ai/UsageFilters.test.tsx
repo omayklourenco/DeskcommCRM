@@ -1,7 +1,8 @@
 /**
  * O filtro "Tipo de uso" oferecia uma lista fixa, quase toda de nomes que
  * `llm_calls.purpose` não tem (`sentiment_check`, `embed_chunk`...), e sem os que
- * tem (`agent_turn`, `stage_classifier`...): escolher devolvia zero, e a tela
+ * tem (`agent_turn`, `stage_classifier`...): escolher um desses nomes inexistentes
+ * devolvia zero, e a tela
  * mentia por omissão. As opções agora são os purposes que de fato aparecem no
  * período, com o rótulo do registro de pontos.
  */
