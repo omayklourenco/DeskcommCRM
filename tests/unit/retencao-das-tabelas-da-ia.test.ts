@@ -108,6 +108,10 @@ function bancoGravador(devolve: Partial<Record<string, number[]>> = {}): {
     async apagarRascunhos() {
       return { data: 0, error: null };
     },
+    // A poda de mídia (0557) roda antes das quatro desta suíte; aqui ela não acha nada.
+    async enfileirarMidia() {
+      return { data: { vencidas: 0, orfas: 0 }, error: null };
+    },
   };
   return { db, chamadas };
 }

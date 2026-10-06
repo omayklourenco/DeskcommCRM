@@ -293,6 +293,8 @@ export const RETENCAO_MIDIA_DIAS_PADRAO = 365;
  * o piso vale mesmo com valor menor no banco.
  */
 export const RETENCAO_MIDIA_DIAS_PISO = 30;
+
+/**
  * 400 dias para a TELEMETRIA DA IA (`llm_calls`, `metrics`, `skill_activations`,
  * `ai_router_decisions` — migration 0550), um prazo para as quatro.
  *
